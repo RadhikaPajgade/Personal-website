@@ -24,11 +24,40 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <style>
+  .swiper {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+      .overlay-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    white-space: nowrap;
+}
+
+  </style>
 </head>
 
 <body class="full_width_container">
   <!-- Navbar -->
-  <div class="navbar-container">
+  <div style="position: fixed; width: 100%;" class="navbar-container">
     <div class="primary_container">
       <a class="link home-icon" href="index.html"></a>
       <div class="navbar align_menu" style="font-family: Montserrat; font-weight:500">
@@ -80,6 +109,40 @@
       </div>
     </section>
 
+
+
+    <!-- Swiper Section -->
+    <section id="Swiper" class="Swiper" style="background-color:#E0FFFF">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+                <div class="swiper-slide" style="padding-bottom: 20px;">
+  <plain_article style="position: relative; height: 300px; background-color: #E0FFFF; border-radius: 12px; overflow: hidden;">
+    <a href="#" style="display: block; width: 100%; height: 100%; position: relative;">
+      <img src="assets/svg/Album/GCOEA.png"
+           alt="GCOEA Logo"
+           style="object-fit: contain; width: 100%; height: 100%; display: block; padding: 20px;">
+      <h5 class="overlay-button">Government College of Engineering, Amravati</h5>
+    </a>
+  </plain_article>
+</div>
+        <div class="swiper-slide" style="padding-bottom: 20px;">
+  <plain_article style="position: relative; height: 300px; background-color: #E0FFFF; border-radius: 12px; overflow: hidden;">
+    <a href="#" style="display: block; width: 100%; height: 100%; position: relative;">
+      <img src="assets/svg/Album/IITB.png"
+           alt="IIT Bombay Logo"
+           style="object-fit: contain; width: 100%; height: 100%; display: block; padding: 20px;">
+      <h5 class="overlay-button">Indian Institute of Technology, Bombay</h5>
+    </a>
+  </plain_article>
+</div>
+
+      </div>
+      <!-- Optional navigation dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+    
     <!-- Experience Section -->
     <section id="Experience" class="Experience" style="background-color:#E0FFFF">
       <div class="primary_container">
@@ -283,6 +346,23 @@
   <!-- Scripts -->
   <script src="assets/js/mode_switcher.js" type="text/javascript"></script>
   <script src="assets/js/code_block.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 2000, // 👈 slow down transition (default is 300)
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 5000, // 5 seconds between slides
+      disableOnInteraction: false,
+    },
+  });
+</script>
 </body>
 
 </html>
